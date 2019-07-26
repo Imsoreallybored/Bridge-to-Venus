@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Imsoreallybored.github.io</title>
-	</head>
-	<body>
-		<h1>Hello World</h1>
-		<p>Worp worp.</p>
-		<script src="https://cdn.jwplayer.com/players/mca0uEze-u0cJLpPX.js"></script>
-	</body>
+<head>
+    <!-- flowplayer javascript component -->
+    <script src="http://releases.flowplayer.org/js/flowplayer-3.2.12.min.js"></script>
+</head>
+ 
+<body>
+<div id="player" style="width:644px;height:276px;margin:0 auto;text-align:center">
+    <img src="github/1569574415_preview_Submerged View.jpg" height="260" width="489" /></div>
+<script>
+ 
+$f("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.16.swf", {
+    clip: {
+        url: 'sample.mp4',
+        scaling: 'fit',
+        provider: 'hddn'
+    },
+ 
+    plugins: {
+        hddn: {
+            url: "/path/to/flowplayer.rtmp-3.2.12.swf",
+ 
+            // netConnectionUrl defines where the streams are found
+            netConnectionUrl: 'rtmp://198.168.1.6:1935/live'
+        }
+    },
+    canvas: {
+        backgroundGradient: 'none'
+    }
+});
+</script>
+</body>
 </html>
